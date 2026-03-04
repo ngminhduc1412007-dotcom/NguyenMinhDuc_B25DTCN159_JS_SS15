@@ -1,12 +1,8 @@
-// ==================
 // Dữ liệu
-// ==================
 var tasks = [];
 var idCounter = 1;
 
-// ==================
 // DOM
-// ==================
 var taskInput = document.getElementById("taskInput");
 var addBtn = document.getElementById("addBtn");
 var taskList = document.getElementById("taskList");
@@ -14,9 +10,7 @@ var completedCount = document.getElementById("completedCount");
 var totalCount = document.getElementById("totalCount");
 var completionStatus = document.getElementById("completionStatus");
 
-// ==================
 // Khởi động
-// ==================
 init();
 
 function init() {
@@ -34,9 +28,7 @@ function init() {
   });
 }
 
-// ==================
 // Thêm công việc
-// ==================
 function addTask() {
   var text = taskInput.value.trim();
 
@@ -61,9 +53,7 @@ function addTask() {
   updateFooter();
 }
 
-// ==================
 // Render danh sách
-// ==================
 function renderTasks() {
   taskList.innerHTML = "";
 
@@ -85,9 +75,7 @@ function renderTasks() {
   });
 }
 
-// ==================
 // Tạo 1 task element
-// ==================
 function createTaskElement(task) {
   var div = document.createElement("div");
   div.className = "task-item";
@@ -142,9 +130,7 @@ function createTaskElement(task) {
   return div;
 }
 
-// ==================
 // Toggle hoàn thành
-// ==================
 function toggleTask(id) {
   var task = tasks.find(function (t) {
     return t.id === id;
@@ -157,9 +143,7 @@ function toggleTask(id) {
   }
 }
 
-// ==================
 // Xóa
-// ==================
 function deleteTask(id) {
   var task = tasks.find(function (t) {
     return t.id === id;
@@ -178,9 +162,7 @@ function deleteTask(id) {
   updateFooter();
 }
 
-// ==================
 // Edit
-// ==================
 function editTask(id) {
   var task = tasks.find(function (t) {
     return t.id === id;
@@ -232,9 +214,7 @@ function editTask(id) {
   });
 }
 
-// ==================
 // Lưu sau khi sửa
-// ==================
 function saveTask(id, newText) {
   var value = newText.trim();
 
@@ -255,9 +235,7 @@ function saveTask(id, newText) {
   updateFooter();
 }
 
-// ==================
 // Cập nhật footer
-// ==================
 function updateFooter() {
   var total = tasks.length;
 
